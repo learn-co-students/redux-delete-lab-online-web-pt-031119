@@ -10,7 +10,7 @@ export default function manageBand(state = {
 
 
     const band = {
-      name: action.payload,
+      name: action.name,
       id: uuid()
 
     }
@@ -27,7 +27,8 @@ export default function manageBand(state = {
 
     case 'DELETE_BAND':
       console.log("delete", action)
-        return {bands: state.bands.filter(band => band.id !== action.payload) }
+        return {bands: state.bands.filter(band => band.id !== action.id)}
+
 
     default:
       return state;
